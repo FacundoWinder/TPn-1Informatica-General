@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -42,6 +43,7 @@ nav a {
 nav a:hover {
     background-color: #34495e;
 }
+
 main {
     flex: 1;
     width: 100%;
@@ -59,4 +61,79 @@ footer {
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+}
+
+.reglas {
+    background-color: #eef2f7;
+    padding: 1rem;
+    border-left: 4px solid #2c3e50;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.contenedor-dados {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contenedor-dados img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-principal {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-principal:hover {
+    background-color: #219150;
+}
+
+.btn-secundario {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-secundario:hover {
+    background-color: #c0392b;
+}
+
+.panel-resultados {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.panel-resultados span {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.mensaje {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #27ae60;
 }
