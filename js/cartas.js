@@ -32,7 +32,7 @@ function mezclarMazo() {
 }
 
 function obtenerImagenCarta(carta) {
-    return `https://deckofcards.s3.amazonaws.com/cards/${carta.valor}${carta.palo}.png`;
+    return `https://deckofcardsapi.com/static/img/${carta.valor}${carta.palo}.png`;
 }
 
 function obtenerPuntoCarta(carta) {
