@@ -189,16 +189,72 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 120px;
+    min-height: 130px;
+    align-items: center;
 }
 
-.carta-imagen {
+/* CARTAS GENERADAS CON HTML */
+.carta-visual {
     width: 70px;
-    height: auto;
-    border-radius: 5px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: default;
 }
 
+.carta-roja {
+    color: #c0392b;
+}
+
+.carta-oculta {
+    background: repeating-linear-gradient(
+        45deg,
+        #1a3a5c,
+        #1a3a5c 5px,
+        #2c5282 5px,
+        #2c5282 10px
+    );
+    color: transparent;
+}
+
+.carta-esquina-sup {
+    text-align: left;
+    line-height: 1.1;
+    font-size: 0.75rem;
+}
+
+.carta-esquina-inf {
+    text-align: right;
+    line-height: 1.1;
+    font-size: 0.75rem;
+    transform: rotate(180deg);
+}
+
+.carta-centro {
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carta-oculta .carta-centro {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+/* RÃ‰CORDS */
 .seccion-record {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;

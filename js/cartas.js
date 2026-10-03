@@ -9,7 +9,7 @@ let victorias = 0;
 let derrotas = 0;
 let empates = 0;
 
-let palos = ["C", "D", "H", "S"];
+let palos = ["♠", "♥", "♦", "♣"];
 let valores = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
 function crearMazo() {
@@ -31,8 +31,28 @@ function mezclarMazo() {
     }
 }
 
-function obtenerImagenCarta(carta) {
-    return `https://deckofcardsapi.com/static/img/${carta.valor}${carta.palo}.png`;
+function esRoja(carta) {
+    return carta.palo === "♥" || carta.palo === "♦";
+}
+
+function crearCartaHTML(carta) {
+    let div = document.createElement("div");
+    div.className = "carta-visual";
+    if (esRoja(carta)) {
+        div.classList.add("carta-roja");
+    }
+    div.innerHTML =
+        `<span class="carta-esquina-sup">${carta.valor}<br>${carta.palo}</span>` +
+        `<span class="carta-centro">${carta.palo}</span>` +
+        `<span class="carta-esquina-inf">${carta.valor}<br>${carta.palo}</span>`;
+    return div;
+}
+
+function crearCartaOcultaHTML() {
+    let div = document.createElement("div");
+    div.className = "carta-visual carta-oculta";
+    div.innerHTML = `<span class="carta-centro">🂠</span>`;
+    return div;
 }
 
 function obtenerPuntoCarta(carta) {
@@ -73,11 +93,8 @@ function mostrarCartas(mano, contenedorId) {
     contenedor.innerHTML = "";
 
     for (let i = 0; i < mano.length; i++) {
-        let img = document.createElement("img");
-        img.src = obtenerImagenCarta(mano[i]);
-        img.alt = mano[i].valor + " de " + mano[i].palo;
-        img.className = "carta-imagen";
-        contenedor.appendChild(img);
+        let carta = crearCartaHTML(mano[i]);
+        contenedor.appendChild(carta);
     }
 }
 
@@ -85,17 +102,11 @@ function mostrarCartaOculta() {
     let contenedor = document.querySelector("#mano-dealer");
     contenedor.innerHTML = "";
 
-    let imgVisible = document.createElement("img");
-    imgVisible.src = obtenerImagenCarta(manoDealer[0]);
-    imgVisible.alt = manoDealer[0].valor + " de " + manoDealer[0].palo;
-    imgVisible.className = "carta-imagen";
-    contenedor.appendChild(imgVisible);
+    let cartaVisible = crearCartaHTML(manoDealer[0]);
+    contenedor.appendChild(cartaVisible);
 
-    let imgOculta = document.createElement("img");
-    imgOculta.src = "https://deckofcards.s3.amazonaws.com/cards/back.png";
-    imgOculta.alt = "Carta oculta";
-    imgOculta.className = "carta-imagen";
-    contenedor.appendChild(imgOculta);
+    let cartaOculta = crearCartaOcultaHTML();
+    contenedor.appendChild(cartaOculta);
 
     document.querySelector("#puntos-dealer").innerHTML = "?";
 }
@@ -163,7 +174,7 @@ function pedirCarta() {
     if (puntos > 21) {
         terminarPartida("pasado");
     } else if (puntos === 21) {
-        terminarPartida("jugador21");
+        plantarse();
     }
 }
 
@@ -222,10 +233,6 @@ function terminarPartida(resultado) {
         mensaje.style.color = "#e74c3c";
         derrotas++;
         resultadoTexto = "Derrota (pasado de 21)";
-    } else if (resultado === "jugador21") {
-        mensaje.innerHTML = "🎉 ¡Llegaste a 21! El dealer juega...";
-        jugarDealer();
-        return;
     } else if (resultado === "dealer-pasado") {
         mensaje.innerHTML = "🎉 ¡El dealer se pasó de 21! ¡Ganaste!";
         mensaje.style.color = "#27ae60";
