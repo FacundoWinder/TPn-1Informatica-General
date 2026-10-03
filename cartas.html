@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP1 - Juego de Cartas</title>
+    <title>TP1 - Blackjack</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,13 +24,55 @@
     </nav>
 
     <main>
-        <h2>Juego de Cartas</h2>
-        <p>Encuentra las parejas o suma puntos con el mazo de cartas.</p>
+        <h2>Blackjack</h2>
+
+        <div class="reglas">
+            <strong>Reglas:</strong> Sumá cartas lo más cerca posible de 21 sin pasarte.
+            El As vale 1 u 11. Las figuras (J, Q, K) valen 10.
+            El Dealer se planta en 17 o más. Tenés 60 segundos por partida.
+        </div>
+
+        <div id="timer-contenedor">
+            <span>⏱ Tiempo restante: </span>
+            <span id="timer">60</span>
+            <span> segundos</span>
+        </div>
+
+        <div class="blackjack-mesa">
+
+            <section class="blackjack-zona">
+                <h3>Dealer</h3>
+                <div id="mano-dealer" class="mano-cartas"></div>
+                <p>Puntos: <span id="puntos-dealer">0</span></p>
+            </section>
+
+            <section class="blackjack-zona">
+                <h3>Tu mano</h3>
+                <div id="mano-jugador" class="mano-cartas"></div>
+                <p>Puntos: <span id="puntos-jugador">0</span></p>
+            </section>
+
+        </div>
+
+        <div id="mensaje-partida" class="mensaje"></div>
+
+        <div class="acciones">
+            <button class="btn-principal" id="btn-nueva" onclick="nuevaPartida()">Nueva partida</button>
+            <button class="btn-principal" id="btn-pedir" onclick="pedirCarta()" disabled>Pedir carta</button>
+            <button class="btn-secundario" id="btn-plantarse" onclick="plantarse()" disabled>Plantarse</button>
+        </div>
+
+        <div class="panel-resultados">
+            <p>Victorias: <span id="victorias">0</span> &nbsp;|&nbsp; Derrotas: <span id="derrotas">0</span> &nbsp;|&nbsp; Empates: <span id="empates">0</span></p>
+        </div>
+
     </main>
 
     <footer>
         <p>&copy; 2026 - Informática General - Artes Multimediales UNA</p>
     </footer>
+
+    <script src="js/cartas.js"></script>
 
 </body>
 </html>
