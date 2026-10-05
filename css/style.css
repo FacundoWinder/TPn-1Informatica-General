@@ -294,3 +294,534 @@ button {
     font-style: italic;
     margin-bottom: 1rem;
 }
+
+
+
+/* ESTILOS JUEGO DE PREGUNTAS */
+
+.oculto {
+    display: none;
+}
+
+.preguntas-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#texto-pregunta {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+#contenedor-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-opcion {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    font-weight: normal;
+}
+
+.btn-opcion:hover:not(:disabled) {
+    background-color: #d5dbdb;
+    border-color: #2c3e50;
+}
+
+.opcion-correcta {
+    background-color: #27ae60 !important;
+    color: #ffffff !important;
+    border-color: #1e8449 !important;
+}
+
+.opcion-incorrecta {
+    background-color: #e74c3c !important;
+    color: #ffffff !important;
+    border-color: #c0392b !important;
+}
+
+#pantalla-resultado {
+    text-align: center;
+}
+
+#pantalla-resultado h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+#pantalla-resultado p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+#pantalla-carga {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 2rem;
+}
+
+#pantalla-error {
+    text-align: center;
+    color: #e74c3c;
+    padding: 1rem;
+}
+/* 
+   ESTILOS BLACKJACK Y RÃ‰CORDS
+   */
+
+#timer-contenedor {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+#timer {
+    font-size: 1.8rem;
+    color: #e74c3c;
+}
+
+.blackjack-mesa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.blackjack-zona {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    background-color: #1a6b2f;
+    border-radius: 10px;
+    padding: 1rem;
+    color: #ffffff;
+}
+
+.blackjack-zona h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.blackjack-zona p {
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.mano-cartas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 130px;
+    align-items: center;
+}
+
+.carta-visual {
+    width: 70px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3px;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.carta-roja {
+    color: #c0392b;
+}
+
+.carta-oculta {
+    background: repeating-linear-gradient(
+        45deg,
+        #1a3a5c,
+        #1a3a5c 5px,
+        #2c5282 5px,
+        #2c5282 10px
+    );
+}
+
+.carta-esquina-sup {
+    text-align: left;
+    line-height: 1.1;
+    font-size: 0.7rem;
+}
+
+.carta-esquina-inf {
+    text-align: right;
+    line-height: 1.1;
+    font-size: 0.7rem;
+    transform: rotate(180deg);
+}
+
+.carta-figuras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 0.6rem;
+}
+
+.carta-figura-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.carta-oculta .carta-figura-texto {
+    color: #ffffff;
+}
+
+/* RÃ‰CORDS */
+.seccion-record {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #dde;
+}
+
+.seccion-record h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.tabla-records {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.tabla-records th {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.6rem 1rem;
+    text-align: left;
+}
+
+.tabla-records td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-records tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.sin-records {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* JUEGO DE PREGUNTAS */
+.oculto {
+    display: none;
+}
+
+.preguntas-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#texto-pregunta {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+#contenedor-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-opcion {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: normal;
+}
+
+.btn-opcion:hover:not(:disabled) {
+    background-color: #d5dbdb;
+    border-color: #2c3e50;
+}
+
+.opcion-correcta {
+    background-color: #27ae60 !important;
+    color: #ffffff !important;
+    border-color: #1e8449 !important;
+}
+
+.opcion-incorrecta {
+    background-color: #e74c3c !important;
+    color: #ffffff !important;
+    border-color: #c0392b !important;
+}
+
+#pantalla-resultado {
+    text-align: center;
+}
+
+#pantalla-resultado h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+#pantalla-resultado p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+#pantalla-carga {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 2rem;
+}
+
+#pantalla-error {
+    text-align: center;
+    color: #e74c3c;
+    padding: 1rem;
+}
+
+/* 
+   ESTILOS BLACKJACK Y RÉCORDS */
+
+#timer-contenedor {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+#timer { font-size: 1.8rem; color: #e74c3c; }
+
+.blackjack-mesa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.blackjack-zona {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    background-color: #1a6b2f;
+    border-radius: 10px;
+    padding: 1rem;
+    color: #ffffff;
+}
+
+.blackjack-zona h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+.blackjack-zona p { margin-top: 0.8rem; font-size: 1.1rem; }
+
+.mano-cartas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 130px;
+    align-items: center;
+}
+
+/* CARTA BASE */
+.carta-visual {
+    width: 72px;
+    height: 104px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    position: relative;
+    color: #1a1a1a;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.carta-roja { color: #c0392b; }
+
+.carta-oculta {
+    background: repeating-linear-gradient(
+        45deg, #1a3a5c, #1a3a5c 5px, #2c5282 5px, #2c5282 10px
+    );
+}
+
+.carta-esquina-sup {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    font-size: 0.65rem;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.carta-esquina-inf {
+    position: absolute;
+    bottom: 3px;
+    right: 4px;
+    font-size: 0.65rem;
+    line-height: 1.1;
+    text-align: right;
+    transform: rotate(180deg);
+}
+
+/* CENTRO AS */
+.carta-centro-grande {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+}
+
+/* CENTRO FIGURAS J Q K */
+.carta-centro-figura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* CARTA OCULTA */
+.carta-oculta .carta-centro-grande { color: #ffffff; }
+
+/* GRILLAS POR CANTIDAD DE FIGURAS */
+.figura-item { font-size: 0.6rem; display: flex; align-items: center; justify-content: center; }
+
+.carta-grid-2, .carta-grid-3, .carta-grid-4,
+.carta-grid-5, .carta-grid-6, .carta-grid-7,
+.carta-grid-8, .carta-grid-9, .carta-grid-10 {
+    position: absolute;
+    top: 16px; bottom: 16px; left: 8px; right: 8px;
+    display: grid;
+}
+
+.carta-grid-2  { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+.carta-grid-3  { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.carta-grid-4  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.carta-grid-5  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.carta-grid-6  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.carta-grid-7  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr; }
+.carta-grid-8  { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr; }
+.carta-grid-9  { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.carta-grid-10 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr; }
+
+/* RÉCORDS */
+.seccion-record { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #dde; }
+.seccion-record h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #2c3e50; }
+
+.tabla-records { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+.tabla-records th { background-color: #2c3e50; color: #ffffff; padding: 0.6rem 1rem; text-align: left; }
+.tabla-records td { padding: 0.6rem 1rem; border-bottom: 1px solid #eee; }
+.tabla-records tr:nth-child(even) { background-color: #f5f5f5; }
+.sin-records { color: #888; font-style: italic; margin-bottom: 1rem; }
+
+/* JUEGO DE PREGUNTAS */
+.oculto { display: none; }
+
+.preguntas-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#texto-pregunta { font-size: 1.1rem; font-weight: bold; margin-bottom: 1.5rem; line-height: 1.6; color: #2c3e50; }
+
+#contenedor-opciones { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.btn-opcion {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: normal;
+}
+
+.btn-opcion:hover:not(:disabled) { background-color: #d5dbdb; border-color: #2c3e50; }
+.opcion-correcta { background-color: #27ae60 !important; color: #ffffff !important; border-color: #1e8449 !important; }
+.opcion-incorrecta { background-color: #e74c3c !important; color: #ffffff !important; border-color: #c0392b !important; }
+
+#pantalla-resultado { text-align: center; }
+#pantalla-resultado h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #2c3e50; }
+#pantalla-resultado p { font-size: 1.1rem; margin-bottom: 0.8rem; }
+#pantalla-carga { text-align: center; font-size: 1.1rem; color: #666; padding: 2rem; }
+#pantalla-error { text-align: center; color: #e74c3c; padding: 1rem; }

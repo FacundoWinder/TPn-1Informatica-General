@@ -1,0 +1,102 @@
+[
+    {
+        "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+        "correcta": "Júpiter",
+        "incorrectas": ["Saturno", "Neptuno", "Urano"]
+    },
+    {
+        "pregunta": "¿En qué año llegó el hombre a la Luna por primera vez?",
+        "correcta": "1969",
+        "incorrectas": ["1965", "1972", "1961"]
+    },
+    {
+        "pregunta": "¿Cuántos continentes tiene la Tierra?",
+        "correcta": "7",
+        "incorrectas": ["5", "6", "8"]
+    },
+    {
+        "pregunta": "¿Cuál es el río más largo del mundo?",
+        "correcta": "El Nilo",
+        "incorrectas": ["El Amazonas", "El Yangtsé", "El Mississippi"]
+    },
+    {
+        "pregunta": "¿Quién pintó la Mona Lisa?",
+        "correcta": "Leonardo da Vinci",
+        "incorrectas": ["Miguel Ángel", "Rafael", "Botticelli"]
+    },
+    {
+        "pregunta": "¿Cuál es el elemento químico con símbolo Au?",
+        "correcta": "Oro",
+        "incorrectas": ["Plata", "Aluminio", "Cobre"]
+    },
+    {
+        "pregunta": "¿Cuántos huesos tiene el cuerpo humano adulto?",
+        "correcta": "206",
+        "incorrectas": ["180", "215", "230"]
+    },
+    {
+        "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+        "correcta": "Francia",
+        "incorrectas": ["Italia", "España", "Bélgica"]
+    },
+    {
+        "pregunta": "¿Cuál es el océano más grande del mundo?",
+        "correcta": "El Pacífico",
+        "incorrectas": ["El Atlántico", "El Índico", "El Ártico"]
+    },
+    {
+        "pregunta": "¿Qué gas es el más abundante en la atmósfera terrestre?",
+        "correcta": "Nitrógeno",
+        "incorrectas": ["Oxígeno", "Dióxido de carbono", "Argón"]
+    },
+    {
+        "pregunta": "¿Cuál es la capital de Australia?",
+        "correcta": "Canberra",
+        "incorrectas": ["Sídney", "Melbourne", "Brisbane"]
+    },
+    {
+        "pregunta": "¿Quién escribió el Quijote?",
+        "correcta": "Miguel de Cervantes",
+        "incorrectas": ["Lope de Vega", "Francisco de Quevedo", "Garcilaso de la Vega"]
+    },
+    {
+        "pregunta": "¿Cuántos lados tiene un hexágono?",
+        "correcta": "6",
+        "incorrectas": ["5", "7", "8"]
+    },
+    {
+        "pregunta": "¿Cuál es el animal terrestre más rápido?",
+        "correcta": "El guepardo",
+        "incorrectas": ["El León", "El caballo", "El avestruz"]
+    },
+    {
+        "pregunta": "¿En qué año comenzó la Primera Guerra Mundial?",
+        "correcta": "1914",
+        "incorrectas": ["1910", "1918", "1939"]
+    },
+    {
+        "pregunta": "¿Cuántos jugadores tiene un equipo de fútbol en el campo?",
+        "correcta": "11",
+        "incorrectas": ["9", "10", "12"]
+    },
+    {
+        "pregunta": "¿Cuál es la montaña más alta del mundo?",
+        "correcta": "El Everest",
+        "incorrectas": ["El K2", "El Aconcagua", "El Kilimanjaro"]
+    },
+    {
+        "pregunta": "¿De qué material está hecha la seda?",
+        "correcta": "Del capullo del gusano de seda",
+        "incorrectas": ["Del algodón", "Del lino", "De la lana"]
+    },
+    {
+        "pregunta": "¿Cuál es el país más grande del mundo en superficie?",
+        "correcta": "Rusia",
+        "incorrectas": ["Canadá", "China", "Estados Unidos"]
+    },
+    {
+        "pregunta": "¿Cuántos colores tiene el arcoíris?",
+        "correcta": "7",
+        "incorrectas": ["5", "6", "8"]
+    }
+]
