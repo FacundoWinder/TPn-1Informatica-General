@@ -24,13 +24,64 @@
     </nav>
 
     <main>
-        <h2>Juego de Preguntas</h2>
-        <p>Pone a prueba tus conocimientos respondiendo la trivia.</p>
+        <h2>Trivia</h2>
+
+        <div class="reglas">
+            <strong>Reglas:</strong> Respondé 10 preguntas de cultura general.
+            Tenés 15 segundos por pregunta. Cada respuesta correcta suma 10 puntos.
+            Hacé click en <strong>Jugar</strong> para comenzar.
+        </div>
+
+        <div id="pantalla-inicio">
+            <div class="acciones">
+                <button class="btn-principal" onclick="iniciarJuego()">Jugar</button>
+            </div>
+        </div>
+
+        <div id="pantalla-juego" class="oculto">
+
+            <div class="preguntas-info">
+                <span>Pregunta <span id="numero-pregunta">1</span> de 10</span>
+                <span>Puntaje: <span id="puntaje-actual">0</span></span>
+                <span>⏱ <span id="timer-preguntas">15</span>s</span>
+            </div>
+
+            <div id="contenedor-pregunta">
+                <p id="texto-pregunta"></p>
+                <div id="contenedor-opciones"></div>
+            </div>
+
+            <div id="mensaje-respuesta" class="mensaje"></div>
+
+        </div>
+
+        <div id="pantalla-resultado" class="oculto">
+            <h3>¡Juego terminado!</h3>
+            <p>Tu puntaje final: <strong><span id="puntaje-final">0</span> puntos</strong></p>
+            <p id="mensaje-final"></p>
+            <div class="acciones">
+                <button class="btn-principal" onclick="iniciarJuego()">Jugar de nuevo</button>
+            </div>
+        </div>
+
+        <div id="pantalla-carga" class="oculto">
+            <p>Cargando preguntas...</p>
+        </div>
+
+        <div id="pantalla-error" class="oculto">
+            <p>No se pudieron cargar las preguntas. Verificá tu conexión a internet e intentá de nuevo.</p>
+            <div class="acciones">
+                <button class="btn-principal" onclick="iniciarJuego()">Reintentar</button>
+            </div>
+        </div>
+
     </main>
 
     <footer>
         <p>&copy; 2026 - Informática General - Artes Multimediales UNA</p>
     </footer>
+
+    <script src="js/preguntas.js"></script>
 
 </body>
 </html>

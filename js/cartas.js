@@ -41,17 +41,42 @@ function crearCartaHTML(carta) {
     if (esRoja(carta)) {
         div.classList.add("carta-roja");
     }
+
+    let figuras = ["J", "Q", "K"];
+    let esFigura = false;
+    for (let i = 0; i < figuras.length; i++) {
+        if (carta.valor === figuras[i]) {
+            esFigura = true;
+        }
+    }
+
+    let centro = "";
+
+    if (carta.valor === "A") {
+        centro = `<div class="carta-centro-grande">${carta.palo}</div>`;
+    } else if (esFigura) {
+        centro = `<div class="carta-centro-figura">${carta.valor}<br>${carta.palo}</div>`;
+    } else {
+        let cantidad = Number(carta.valor);
+        let items = "";
+        for (let i = 0; i < cantidad; i++) {
+            items += `<span class="figura-item">${carta.palo}</span>`;
+        }
+        centro = `<div class="carta-grid-${cantidad}">${items}</div>`;
+    }
+
     div.innerHTML =
-        `<span class="carta-esquina-sup">${carta.valor}<br>${carta.palo}</span>` +
-        `<span class="carta-centro">${carta.palo}</span>` +
-        `<span class="carta-esquina-inf">${carta.valor}<br>${carta.palo}</span>`;
+        `<div class="carta-esquina-sup">${carta.valor}<br>${carta.palo}</div>` +
+        centro +
+        `<div class="carta-esquina-inf">${carta.valor}<br>${carta.palo}</div>`;
+
     return div;
 }
 
 function crearCartaOcultaHTML() {
     let div = document.createElement("div");
     div.className = "carta-visual carta-oculta";
-    div.innerHTML = `<span class="carta-centro">🂠</span>`;
+    div.innerHTML = `<div class="carta-centro-grande">?</div>`;
     return div;
 }
 
@@ -94,7 +119,7 @@ function mostrarCartas(mano, contenedorId) {
 
     for (let i = 0; i < mano.length; i++) {
         let carta = crearCartaHTML(mano[i]);
-        contenedor.appendChild(carta);
+        contenedor.append(carta);
     }
 }
 
@@ -103,10 +128,10 @@ function mostrarCartaOculta() {
     contenedor.innerHTML = "";
 
     let cartaVisible = crearCartaHTML(manoDealer[0]);
-    contenedor.appendChild(cartaVisible);
+    contenedor.append(cartaVisible);
 
     let cartaOculta = crearCartaOcultaHTML();
-    contenedor.appendChild(cartaOculta);
+    contenedor.append(cartaOculta);
 
     document.querySelector("#puntos-dealer").innerHTML = "?";
 }
@@ -258,8 +283,6 @@ function terminarPartida(resultado) {
         mensaje.style.color = "#e74c3c";
         derrotas++;
         resultadoTexto = "Derrota (tiempo agotado)";
-        mostrarCartas(manoDealer, "mano-dealer");
-        document.querySelector("#puntos-dealer").innerHTML = calcularPuntos(manoDealer);
         document.querySelector("#btn-pedir").disabled = true;
         document.querySelector("#btn-plantarse").disabled = true;
         document.querySelector("#btn-nueva").disabled = false;
@@ -274,7 +297,6 @@ function terminarPartida(resultado) {
 
 function guardarRecord(resultado, puntos) {
     let records = [];
-
     try {
         let guardado = localStorage.getItem("records-blackjack");
         if (guardado !== null) {
@@ -283,19 +305,15 @@ function guardarRecord(resultado, puntos) {
     } catch (e) {
         records = [];
     }
-
     let nuevaEntrada = {
         resultado: resultado,
         puntos: puntos,
         fecha: new Date().toLocaleDateString()
     };
-
     records.push(nuevaEntrada);
-
     if (records.length > 10) {
         records = records.slice(records.length - 10);
     }
-
     try {
         localStorage.setItem("records-blackjack", JSON.stringify(records));
     } catch (e) {
