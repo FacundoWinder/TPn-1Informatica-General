@@ -28,6 +28,18 @@ function tirarDados() {
     if (puntosTotales >= PUNTOS_OBJETIVO) {
         elemMensaje.textContent = `¡Felicidades! Ganaste en ${lanzamientos} lanzamientos. 🎉`;
         btnTirar.disabled = true;
+
+    let recordDados = {
+        resultado: "Victoria",
+        puntos: lanzamientos,
+        fecha: new Date().toLocaleDateString()
+    };
+
+    let guardado = localStorage.getItem("records-dados");
+    let records = guardado ? JSON.parse(guardado) : [];
+    records.push(recordDados);
+    localStorage.setItem("records-dados", JSON.stringify(records));
+
     }
 }
 

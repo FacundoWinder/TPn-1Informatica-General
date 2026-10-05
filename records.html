@@ -25,12 +25,45 @@
 
     <main>
         <h2>Tabla de Récords</h2>
-        <p>Consulta las mejores puntuaciones de cada juego.</p>
+        <p>Consultá las mejores puntuaciones de cada juego.</p>
+
+        <section class="seccion-record">
+            <h3>🃏 Blackjack</h3>
+            <div id="records-blackjack">
+                <p class="sin-records">Todavía no hay partidas registradas.</p>
+            </div>
+            <div class="acciones">
+                <button class="btn-secundario" onclick="borrarRecords('blackjack')">Borrar récords Blackjack</button>
+            </div>
+        </section>
+
+        <section class="seccion-record">
+            <h3>🎲 Dados</h3>
+            <div id="records-dados">
+                <p class="sin-records">Todavía no hay partidas registradas.</p>
+            </div>
+            <div class="acciones">
+                <button class="btn-secundario" onclick="borrarRecords('dados')">Borrar récords Dados</button>
+            </div>
+        </section>
+
+        <section class="seccion-record">
+            <h3>❓ Preguntas</h3>
+            <div id="records-preguntas">
+                <p class="sin-records">Todavía no hay partidas registradas.</p>
+            </div>
+            <div class="acciones">
+                <button class="btn-secundario" onclick="borrarRecords('preguntas')">Borrar récords Preguntas</button>
+            </div>
+        </section>
+
     </main>
 
     <footer>
         <p>&copy; 2026 - Informática General - Artes Multimediales UNA</p>
     </footer>
+
+    <script src="js/records.js"></script>
 
 </body>
 </html>
