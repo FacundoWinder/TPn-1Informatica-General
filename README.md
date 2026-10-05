@@ -1,51 +1,46 @@
 # TP1 - Colección de Juegos (Informática General 2026)
 
-Este proyecto es una plataforma web interactiva desarrollada para la materia **Informática General** (Artes Multimediales - UNA). Consiste en un sitio web estructurado con HTML5 semántico y CSS3 que alberga una colección de tres juegos interactivos desarrollados con JavaScript.
+Este es nuestro Trabajo Práctico 1 para la materia **Informática General** (Artes Multimediales - UNA). Armamos un sitio web con HTML5, CSS y JavaScript que incluye 3 juegos interactivos.
 
----
+## Integrantes
+* **Oleg Poliakov:** Maquetado base del sitio con HTML5 y CSS (Flexbox), estructura de las 6 páginas y desarrollo del Juego de Dados.
+* **Naum Alvarez:** Juego de Cartas, Juego de Preguntas (con API), manejo de `localStorage`, temporizador, administración del repo y README.
 
-## 👥 Integrantes del Grupo
+## Estructura del Sitio
+El proyecto tiene 6 páginas conectadas entre sí:
+* `index.html` - Inicio.
+* `dados.html` - Juego de Dados.
+* `cartas.html` - Juego de Cartas.
+* `preguntas.html` - Trivia con API.
+* `records.html` - Tabla de récords.
+* `nosotros.html` - Integrantes del grupo.
 
-* **Oleg Poliakov:** Estructura general de HTML5 y CSS (Flexbox), maquetado base del sitio y desarrollo del Juego de Dados.
-* **Naum Alvarez:** Desarrollo del Juego de Cartas, Juego de Preguntas (API), persistencia de datos (`localStorage`), temporizador, administración del repositorio en GitHub y documentación.
+Para los estilos usamos un solo archivo CSS (`css/style.css`) con **Flexbox** para alinear el menú, los botones y las tarjetas de los juegos.
 
----
-
-## 🛠️ Tecnologías y Estructura
-
-* **HTML5 Semántico:** Estructuración de las 6 páginas principales (`index.html`, `dados.html`, `cartas.html`, `preguntas.html`, `records.html`, `nosotros.html`) utilizando elementos semánticos (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-* **CSS3 & Flexbox:** Estilos globales unificados (`css/style.css`), diseño responsivo y alineación mediante CSS Flexbox.
-* **JavaScript ES6:** Manipulación del DOM, control de eventos, generación de números aleatorios, timers (`setInterval`), persistencia de datos con `localStorage` y solicitudes asíncronas (`fetch` / `async-await`).
-* **Git & GitHub Pages:** Control de versiones colaborativo y publicación en línea.
-
----
-
-## 🎮 Descripción de los Juegos
+## Juegos
 
 ### 🎲 Juego de Dados
-Juego interactivo desarrollado con JavaScript. El jugador tira dos dados con el objetivo de alcanzar o superar los 50 puntos acumulados en la menor cantidad de lanzamientos. Incluye control de estado (victoria/reinicio) y actualización del DOM en tiempo real.
+El objetivo es sumar 50 puntos o más en la menor cantidad de tiradas.
+* Usa `Math.random()` para generar los valores de los dados (1 al 6).
+* Cambia las imágenes de los dados dinámicamente según el resultado.
+* Suma los puntos, muestra el resultado y bloquea el botón al ganar.
 
 ### 🃏 Juego de Cartas
-Juego basado en cartas con imágenes dinámicas y límite de tiempo. Incorpora un temporizador que limita la duración de la partida, cálculo de puntaje por rondas y control de estado de la mesa de juego.
+Un juego de cartas interactivo que funciona con límite de tiempo.
+* Incluye un temporizador y calcula el puntaje obtenido por rondas.
 
-### 🧠 Juego de Preguntas (Trivia API)
-Juego de preguntas y respuestas que consume datos en tiempo real desde la API pública **Open Trivia DB** mediante `fetch()`. El sistema procesa las preguntas, mezcla las opciones de respuesta y suma puntos por cada acierto.
+### 🧠 Juego de Preguntas (API)
+Una trivia que trae preguntas en tiempo real desde la API pública **Open Trivia DB**.
+* Usa `fetch()` para pedir las preguntas a la API.
+* Mezcla las respuestas y suma puntos cuando se responde correctamente.
 
----
+## Guardado de Récords
+Usamos **`localStorage`** del navegador para guardar los mejores puntajes de los juegos, así los datos no se borran al cerrar o recargar la página.
 
-## 🏆 Persistencia y Récords
+## Declaración de Uso de IA
+Usamos asistentes de IA como apoyo durante la cursada para:
+1. Consultas sobre maquetado HTML5 y CSS Flexbox.
+2. Detección y corrección de errores (debugging) en JavaScript.
+3. Revisión de sintaxis para el consumo de la API y el uso del DOM.
 
-El sitio cuenta con una sección dedicada a la tabla de posiciones (`records.html`). Utiliza la API de **`localStorage`** del navegador para guardar y actualizar los mejores puntajes (récords) de cada uno de los juegos, de modo que la información se mantiene guardada incluso al cerrar el navegador.
-
----
-
-## 🤖 Declaración de Uso de Inteligencia Artificial (IA)
-
-En cumplimiento con las consignas de la materia, se declara que la lógica, la estructura y la resolución técnica del proyecto fueron desarrolladas por los integrantes del grupo aplicando los conocimientos vistos en clase.
-
-Las herramientas de **Inteligencia Artificial Generativa** (asistentes de código LLM) se utilizaron de manera secundaria como apoyo durante las distintas etapas del desarrollo para:
-1. **Consultas y estructura:** Asistencia en la optimización del maquetado HTML5 y Flexbox.
-2. **Depuración y revisión:** Apoyo en la detección de errores (debugging) y formateo de la sintaxis en JavaScript.
-3. **Validación:** Verificación de buenas prácticas en la manipulación del DOM y el consumo de APIs.
-
-*Todo el código propuesto o revisado con asistencia de IA fue analizado, probado, adaptado e integrado de manera consciente por los integrantes del grupo.*
+Todo el código fue probado, adaptado y modificado por nosotros.
